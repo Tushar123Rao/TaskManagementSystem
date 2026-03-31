@@ -1,0 +1,33 @@
+﻿@using TaskManagementSystem.ViewModels
+@model CreateTaskViewModel
+<h2>Create Task</h2>
+<form method="post">
+	<label asp-for="Title"></label>
+	<input asp-for="Title" type="text" />
+	<span asp-validation-for="Title"></span>
+	<label asp-for="Description"></label>
+	<textarea asp-for="Description"></textarea>
+	<span asp-validation-for="Description"></span>
+	<label asp-for="Status"></label>
+	<select asp-for="Status">
+		<option value="Pending">Pending</option>
+		<option value="InProgress">InProgress</option>
+		<option value="Completed">Completed</option>
+	</select>
+	<span asp-validation-for="Status"></span>
+	<label asp-for="Priority"></label>
+	<select asp-for="Priority">
+		<option value="Low">Low</option>
+		<option value="Medium">Medium</option>
+		<option value="High">High</option>
+	</select>
+	<span asp-validation-for="Priority"></span>
+	<label asp-for="DueDate"></label>
+	<input asp-for="DueDate" type="date" />
+	<span asp-validation-for="DueDate"></span>
+	<label asp-for="ReminderDateTime"></label>
+	<input asp-for="ReminderDateTime" type="datetime-local" />
+	<span asp-validation-for="ReminderDateTime"></span>
+	<button type="submit">Submit</button>
+
+</form>

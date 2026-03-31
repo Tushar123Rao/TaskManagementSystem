@@ -1,0 +1,36 @@
+﻿@using TaskManagementSystem.Models
+@model List<TaskItem>
+<h2>Task Home</h2>
+<table>
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Status</th>
+			<th>Priority</th>
+			<th>DueDate</th>
+			<th>ReminderDate</th>
+			<th>IsCompleted</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var item in Model)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.Title</td>
+				<td>@item.Description</td>
+				<td>@item.Status</td>
+				<td>@item.Priority</td>
+				<td>@item.DueDate</td>
+				<td>@item.ReminderDateTime</td>
+				<td>@item.IsCompleted</td>
+				<td>
+					<a asp-action="MarkComplete" asp-route-id="@item.Id">Mark Complete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
